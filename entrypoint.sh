@@ -19,6 +19,10 @@ echo ":github: Bearer ${GITHUB_TOKEN}" >> ~/.gem/credentials
 
 cd "${WORKING_DIRECTORY:-.}"
 
+echo "---------------------"
+env
+echo "---------------------"
+
 echo "Building the gem"
 find . -name '*.gemspec' -maxdepth 1 -exec gem build {} \;
 echo "Pushing the built gem to GitHub Package Registry"
